@@ -9,7 +9,7 @@ base-url: '/docs/scala-activerecord/ja/'
 
 [`scala-activerecord`](https://github.com/aselab/scala-activerecord){:target="_blank" rel="noopener"} はScala用ORMライブラリです。
 
-このライブラリはRuby on RailsのActiveRecordに着想から生まれたものです。  
+このライブラリはRuby on RailsのActiveRecordの着想から生まれたものです。  
 「設定より規約」、「DRY原則」の設計思想でアプローチしています。  
 ライブラリ導入時にほとんどの項目<sup>[1](#footnote1){:title="データベース接続先、テーブル名、カラム名、テーブル自動作成機能など" id="ref1"}</sup>を自動設定するので、手間をかけずにデータベースに接続することができます。
 
