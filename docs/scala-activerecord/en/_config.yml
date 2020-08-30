@@ -1,0 +1,5 @@
+layout: sidebar
+lang: ja-JP
+base-url: '/scala-activerecord/ja/'
+sidebar:
+  pages: true
