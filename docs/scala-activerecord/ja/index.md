@@ -1,13 +1,13 @@
 ---
 layout: sidebar
-site-title: Scala Activerecord ドキュメント
+site-title: Scala ActiveRecord ドキュメント
 lang: ja-JP
 base-url: '/docs/scala-activerecord/ja/'
 ---
 
 # Scala ActiveRecord [![maven central](https://maven-badges.herokuapp.com/maven-central/com.github.aselab/scala-activerecord_2.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.aselab/scala-activerecord_2.13) [![javadoc](http://javadoc-badge.appspot.com/com.github.aselab/scala-activerecord_2.13.svg?label=scaladoc)](http://javadoc-badge.appspot.com/com.github.aselab/scala-activerecord_2.13/com/github/aselab/activerecord/index.html?javadocio=true)
 
-[`scala-activerecord`](https://github.com/aselab/scala-activerecord){:target="_blank" rel="noopener"} はScala用ORMライブラリです。
+[`Scala ActiveRecord`](https://github.com/aselab/scala-activerecord){:target="_blank" rel="noopener"} はScala用ORMライブラリです。
 
 このライブラリはRuby on RailsのActiveRecordの着想から生まれたものです。  
 「設定より規約」、「DRY原則」の設計思想でアプローチしています。  

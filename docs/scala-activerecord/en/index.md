@@ -1,6 +1,6 @@
 ---
 layout: sidebar
-site-title: Scala Activerecord Documentation
+site-title: Scala ActiveRecord Documentation
 lang: en
 base-url: '/docs/scala-activerecord/en/'
 ---
