@@ -21,7 +21,7 @@ SBT を使用している場合、`build.sbt`の`libraryDependencies`に以下�
 "com.h2database" % "h2" % "1.4.200"
 ```
 
-[[Database Settings]]:
+[データベース接続設定]({{ site.baseurl }}{% link docs/scala-activerecord/ja/database_settings.md %}):
 ```
 driver = org.h2.Driver
 jdbcurl = jdbc:h2:mem:activerecord
@@ -35,7 +35,7 @@ SBT を使用している場合、`build.sbt`の`libraryDependencies`に以下�
 "mysql" % "mysql-connector-java" % "8.0.20"
 ```
 
-[[Database Settings]]:
+[データベース接続設定]({{ site.baseurl }}{% link docs/scala-activerecord/ja/database_settings.md %}):
 ```
 driver = com.mysql.jdbc.Driver
 jdbcurl = jdbc:mysql://hostname:3306/dbname
@@ -51,7 +51,7 @@ SBT を使用している場合、`build.sbt`の`libraryDependencies`に以下�
 "org.postgresql" % "postgresql" % "42.2.14"
 ```
 
-[[Database Settings]]:
+[データベース接続設定]({{ site.baseurl }}{% link docs/scala-activerecord/ja/database_settings.md %}):
 ```
 driver = org.postgresql.Driver
 jdbcurl = jdbc:postgresql://hostname:5432/dbname
@@ -67,7 +67,7 @@ SBT を使用している場合、`build.sbt`の`libraryDependencies`に以下�
 "org.apache.derby" % "derby" % "10.15.2.0"
 ```
 
-[[Database Settings]]:
+[データベース接続設定]({{ site.baseurl }}{% link docs/scala-activerecord/ja/database_settings.md %}):
 ```
 driver = org.apache.derby.jdbc.EmbeddedDriver
 jdbcurl = jdbc:derby:memory:dbname;create=true
@@ -77,7 +77,7 @@ jdbcurl = jdbc:derby:memory:dbname;create=true
 
 Oracle JDBCドライバを手動でダウンロードし依存関係に追加してください。
 
-[[Database Settings]]:
+[データベース接続設定]({{ site.baseurl }}{% link docs/scala-activerecord/ja/database_settings.md %}):
 ```
 driver = oracle.jdbc.OracleDriver
 jdbcurl = jdbc:oracle:<drivertype>:@<hostname>:<port>:<database>
@@ -87,7 +87,7 @@ jdbcurl = jdbc:oracle:<drivertype>:@<hostname>:<port>:<database>
 
 MSSQL JDBCドライバを手動でダウンロードし依存関係に追加してください。
 
-[[Database Settings]]:
+[データベース接続設定]({{ site.baseurl }}{% link docs/scala-activerecord/ja/database_settings.md %}):
 ```
 driver = com.microsoft.sqlserver.jdbc.SQLServerDriver
 jdbcurl = jdbc:sqlserver://<hostname>:<port>;DatabaseName=<database>
@@ -97,7 +97,7 @@ jdbcurl = jdbc:sqlserver://<hostname>:<port>;DatabaseName=<database>
 
 DB2 JDBCドライバを手動でダウンロードし依存関係に追加してください。
 
-[[Database Settings]]:
+[データベース接続設定]({{ site.baseurl }}{% link docs/scala-activerecord/ja/database_settings.md %}):
 ```
 driver = com.ibm.db2.jcc.DB2Driver
 jdbcurl = jdbc:db2@<hostname>:<port>/<database>
@@ -111,7 +111,7 @@ SBT を使用している場合、`build.sbt`の`libraryDependencies`に以下�
 "org.xerial" % "sqlite-jdbc" % "3.32.3"
 ```
 
-[[Database Settings]]:
+[データベース接続設定]({{ site.baseurl }}{% link docs/scala-activerecord/ja/database_settings.md %}):
 ```
 driver = org.sqlite.JDBC
 jdbcurl = jdbc:sqlite:sample.db
