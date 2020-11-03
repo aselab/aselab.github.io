@@ -3,10 +3,12 @@ layout: sidebar
 site-title: Scala ActiveRecord ドキュメント
 lang: ja-JP
 base-url: '/docs/scala-activerecord/ja/'
-sidebar: 5
+sidebar: 6
 ---
 
-# スキーマ設定
+# テーブルスキーマ定義方法
+
+[squeryl]: https://www.squeryl.org/docs/0.9.5/schema-definition.html
 
 ## スキーマクラス models.Tables の定義
 
@@ -34,6 +36,57 @@ object Tables extends ActiveRecordTables {
   // val people = table[Person]("people")
 }
 ```
+
+## テーブル定義の初期化とクリーンアップ
+
+モデルクラスとテーブル定義を行った場合、`Tables#initialize` を使用前に必ず実行する必要があります。  
+`Tables#initialize` の実行時に定義したテーブルが存在しない場合、デフォルトの挙動ではテーブルを自動的に作成します。  
+（この挙動は
+[データベース接続設定]({{ site.baseurl }}{% link docs/scala-activerecord/ja/database_settings.md %}) の autoCreate設定で変更可能です）  
+自動生成されるテーブルのカラム定義（DDL）については `Tables#ddl` で文字列を確認できます。
+
+また、資源の解放をプログラム終了前に行う必要がある場合は `Tables#cleanup` を実行してください。
+
+
+```scala
+// Scala ActiveRecordを使用する前に必ず呼び出すこと
+Tables.initialize
+
+...
+
+// 解放処理を実行
+Tables.cleanup
+```
+
+## カラムのより詳細な定義方法
+
+> **備考 :** 詳細につきましては [Squeryl] ライブラリのマニュアルを参照ください
+
+
+`Tables#initialize` でテーブルが存在しない場合に実施されるテーブル作成処理で `Tables#ddl` の実行結果が使用されますが、  
+その際にDBテーブルの属性（ユニーク属性、インデックス、自動インクリメントなど）の詳細定義を変更したい場合、  
+以下の例のように`table[T]` (`T`はActiveRecordモデル) で定義した変数に対して squerylの形式のテーブル定義を実施することで可能です。
+
+#### 例 : テーブルのカラムの属性変更
+
+```scala
+package models
+
+import com.github.aselab.activerecord._
+import com.github.aselab.activerecord.dsl._
+
+object Tables extends ActiveRecordTables {
+  val people = table[Person]
+
+  on(people)(t => declare(
+    t.name is(unique, indexed("idxPeopleName"), dbType("varchar(255)")),
+    t.name defaultsTo("defaultName"),
+    t.age  is(indexed)
+  ))
+}
+```
+
+
 
 ## テーブル接続ルール設定
 
